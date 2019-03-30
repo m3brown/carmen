@@ -1,0 +1,9 @@
+- id: api
+  name: api 
+  cmd:
+  - pipenv run api/app.py
+- id: setup
+  name: set up development environment
+  cmd:
+    - pipenv sync --dev
+    - pipenv run pre-commit install
