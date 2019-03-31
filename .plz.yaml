@@ -1,7 +1,15 @@
 - id: api
-  name: api 
+  name: api
   cmd:
-  - pipenv run api/app.py
+    - pipenv run python api/app.py
+- id: backend
+  name: backend
+  cmd:
+    - pipenv run python backend/app.py
+- id: frontend
+  name: frontend
+  cmd:
+    - open frontend/index.html
 - id: setup
   name: set up development environment
   cmd:
