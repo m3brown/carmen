@@ -9,6 +9,8 @@ verify_ssl = true
 flask = "*"
 iso3166 = "*"
 flask-cors = "*"
+responder = "*"
+aiohttp = "*"
 
 [requires]
 python_version = "3.6"

@@ -40,15 +40,14 @@
             });
         }
 
-        function updateMap() {
-          const url = 'http://localhost:5000/'
-          return fetch(url)
-            .then(data => data.json())
-            .then(json => json['abbreviation'])
-            .then(country => createChart(country))
-        }
+        const ws = new WebSocket('ws://localhost:5042/ws');
 
-        setInterval(updateMap, 3000)
+        ws.addEventListener('message', function (event) {
+          var country = event.data
+          console.log(event);
+          createChart(country);
+        });
+
     </script>
 </body>
 
