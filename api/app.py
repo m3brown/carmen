@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 from flask import Flask, jsonify
+from flask_cors import CORS
 from datetime import datetime, timedelta
 from iso3166 import countries
 import random
 
 app = Flask(__name__)
+CORS(app)
 
 class ChangingCountry:
   refresh_delta = timedelta(seconds=5)
