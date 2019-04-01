@@ -24,7 +24,7 @@
       var map = createMap("mapdiv");
 
       // Create a new websocket connection to the backend
-      const ws = new WebSocket("ws://localhost:5042/ws");
+      const ws = new WebSocket("ws://" + window.location.hostname + ":5042/ws");
 
       // This function runs every time we receive a message from the backend
       ws.addEventListener("message", event => {

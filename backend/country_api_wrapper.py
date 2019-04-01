@@ -1,4 +1,7 @@
 import aiohttp
+import os
+
+url = os.environ["API_URL"]
 
 
 async def __fetch(session, url):
@@ -15,4 +18,4 @@ async def get_latest_country():
     # Getting the country from a REST API in an async-friendly way requires an
     # asyncio connection pool. aiohttp.ClientSession() sets that up for us.
     async with aiohttp.ClientSession() as session:
-        return await __fetch(session, "http://localhost:5000")
+        return await __fetch(session, url)

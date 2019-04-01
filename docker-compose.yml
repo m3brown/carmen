@@ -1,0 +1,29 @@
+version: "3"
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile_frontend
+    ports:
+      - "8000:80"
+    depends_on:
+      - backend
+    # TODO: look into enforcing host in static files via reverse proxy
+    #environment:
+    #  - BACKEND_URL=http://backend:5042
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile_backend
+    ports:
+      - "5042:5042"
+    depends_on:
+      - api
+    environment:
+      - API_URL=http://api/
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile_api
+    ports:
+      - "8001:80"

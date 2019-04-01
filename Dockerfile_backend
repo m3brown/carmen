@@ -1,0 +1,5 @@
+FROM kennethreitz/pipenv
+ENV PORT '5042'
+copy ./backend /app
+CMD python3 app.py
+EXPOSE 5042

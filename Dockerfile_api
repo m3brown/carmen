@@ -1,0 +1,5 @@
+FROM kennethreitz/pipenv
+ENV PORT '80'
+copy ./api /app
+CMD python3 app.py
+EXPOSE 80
