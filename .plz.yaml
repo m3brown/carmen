@@ -1,17 +1,23 @@
 - id: api
   name: api
-  cmd:
-    - pipenv run python api/app.py
+  cmd: pipenv run python api/app.py
 - id: backend
   name: backend
-  cmd:
-    - pipenv run python backend/app.py
+  cmd: pipenv run python backend/app.py
 - id: frontend
   name: frontend
-  cmd:
-    - open frontend/index.html
+  cmd: open frontend/index.html
+- id: build
+  name: build
+  cmd: docker-compose build
+- id: start
+  name: start
+  cmd: docker-compose up
 - id: setup
   name: set up development environment
   cmd:
     - pipenv sync --dev
     - pipenv run pre-commit install
+- id: benchmark
+  name: benchmark
+  cmd: pipenv run wsstat ws://localhost:5042/ws -c 20 -n 1000
