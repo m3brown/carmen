@@ -16,4 +16,4 @@ repos:
     rev: stable
     hooks:
       - id: black
-        language_version: python3.6
+        language_version: python3 # black requires >= 3.6
