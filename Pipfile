@@ -10,6 +10,7 @@ wsstat = "*"
 iso3166 = "*"
 responder = "*"
 aiohttp = "*"
+wdb = "*"
 
 [requires]
 python_full_version = "3"

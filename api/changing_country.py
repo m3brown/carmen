@@ -28,6 +28,11 @@ class ChangingCountry:
         Pick a new country if the time frame has elapsed.
         """
         now = datetime.now()
+
+        import wdb
+
+        wdb.set_trace()
+
         elapsed = now - self.latest_update
         if elapsed > self.refresh_delta:
             self.current_country = self.get_random_country()

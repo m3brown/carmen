@@ -20,4 +20,4 @@
     - pipenv run pre-commit install
 - id: benchmark
   name: benchmark
-  cmd: pipenv run wsstat ws://localhost:5042/ws -c 20 -n 1000
+  cmd: pipenv run wsstat ws://localhost:5042/ws -c 20 -n 10000

@@ -27,3 +27,12 @@ services:
       dockerfile: Dockerfile_api
     ports:
       - "8001:80"
+    links:
+      - wdb
+    environment:
+      WDB_SOCKET_SERVER: wdb
+      WDB_NO_BROWSER_AUTO_OPEN: y
+  wdb:
+    image: kozea/wdb
+    ports:
+      - "1984:1984"
